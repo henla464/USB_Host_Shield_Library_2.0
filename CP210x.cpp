@@ -128,7 +128,7 @@ Serial.print("init 1: "); Serial.println(rcode);
         USBTRACE2("NC:", num_of_conf);
 
         for(uint8_t i = 0; i < num_of_conf; i++) {
-                ConfigDescParser < 0xFF, 0xFF, 0xFF, CP_MASK_COMPARE_ALL> confDescrParser(this);
+                ConfigDescParser < 0xFF, 0x00, 0x00, CP_MASK_COMPARE_ALL> confDescrParser(this);
 
                 rcode = pUsb->getConfDescr(bAddress, 0, i, &confDescrParser);
 
